@@ -34,6 +34,12 @@ class Contact
     ws[last_row, 3] = self.email
     ws[last_row, 4] = self.content
     ws.save
+
+    # Leer información de google drive
+    # ws.reload()
+    # count = ws[1, 6]
+    # Rails.logger.debug "DEBUG: numero de datos ingresados #{count}"
+
   end
 
 end

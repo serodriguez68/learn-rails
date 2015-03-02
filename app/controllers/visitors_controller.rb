@@ -7,7 +7,7 @@
 class VisitorsController < ApplicationController
     def new
         # Todas las instance variables están disponible en el view file correspondiente
-        @owner = Owner.new
+        @visitor = Visitor.new
 
         # Así se colocan alertas en Rails
         # flash.now[:notice] = 'Welcome!'
@@ -16,5 +16,25 @@ class VisitorsController < ApplicationController
         # Rails magic para unir el modelo con el view (eso está escondido en el código de rails)
         # render 'visitors/new'
     end
+
+    def create
+        @visitor = Visitor.new(secure_params)
+        if @visitor.valid?
+              @visitor.subscribe
+              flash[:notice] = "Signed up #{@visitor.email}."
+              redirect_to root_path
+        else
+            render :new
+        end
+    end
+
+  private
+
+  def secure_params
+    params.require(:visitor).permit(:email)
+  end
+
+
+
 
 end
