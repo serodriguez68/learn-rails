@@ -8,8 +8,10 @@ class VisitorsController < ApplicationController
     def new
         # Todas las instance variables están disponible en el view file correspondiente
         @owner = Owner.new
-        flash.now[:notice] = 'Welcome!'
-        flash.now[:alert] = 'My birthday is soon.'
+
+        # Así se colocan alertas en Rails
+        # flash.now[:notice] = 'Welcome!'
+        # flash.now[:alert] = 'My birthday is soon.'
 
         # Rails magic para unir el modelo con el view (eso está escondido en el código de rails)
         # render 'visitors/new'
