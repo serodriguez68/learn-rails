@@ -1,0 +1,18 @@
+<% content_for :title do %>Contact<% end %>
+
+<h3>Contact</h3>
+
+<div class="form">
+
+  <!-- SimpleForm coloca un destination URL que corresponde a la acción de create del ContactsController -->
+  <!-- Simple form da a la forma el mismo nombre del modelo. -->
+  <%= simple_form_for @contact do |form| %>
+    <!-- Provee el error handling -->
+    <%= form.error_notification %>
+
+    <%= form.input :name, autofocus: true %>
+    <%= form.input :email %>
+    <%= form.input :content, as: :text %>
+    <%= form.button :submit, 'Submit', class: 'submit' %>
+  <% end %>
+</div>
