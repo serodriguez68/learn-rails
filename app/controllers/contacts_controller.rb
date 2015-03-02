@@ -12,15 +12,19 @@ class ContactsController < ApplicationController
 
     # @contact.valid? chequea cada una de las validaciones que se colocaron en el modelo.
     if @contact.valid?
-      # TODO save data
+
+      @contact.update_spreadsheet
       # TODO send message
       flash[:notice] = "Message sent from #{@contact.name}."
       redirect_to root_path
+
+
     else
       # Si hay algun error, se redirige a la acción new pero los errores apropiados
       # son creados en el objeto error_notification (SimpleForm hace esto.)
       render :new
     end
+
   end
 
   private
