@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   # Todos los requests al root se dirigen al VisitorsController y al new action
   root to: 'visitors#new'
 
+  # Los routes de las páginas estáticas incluidas en app/views/pages están controlados
+  # internatmente por el gem "high voltage"
+
 end
