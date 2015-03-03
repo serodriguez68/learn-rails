@@ -57,6 +57,8 @@ window.analytics.page();
 $(document).on('ready page:change', function() {
   console.log('page loaded');
   analytics.page();
+
+  // 2 parámetros, ID attribute of form y name given to event
   analytics.trackForm($('#new_visitor'), 'Signed Up');
   analytics.trackForm($('#new_contact'), 'Contact Request');
 })
