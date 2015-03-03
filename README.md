@@ -3,7 +3,7 @@
 This app can be used for a soon-to-be-launched startup page.
 It invites the visitors to join a newsletter through Mailchimp, stores the information of sign ups in a google sheet (using google drives's API) and allows visitors to send you an email through a form.
 
-The app is great to take a look how all of the following concepts come together in a single web app:
+The app is great to take a look to how all of the following concepts come together in a single web app:
 - MVC software architecture
 - Ruby on Rails development
 - Integration with Foundation 5 front-end framework
